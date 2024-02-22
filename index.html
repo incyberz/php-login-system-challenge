@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UX of PHP Login System Challenge</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/insho-styles.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="abu f12 consolas mt4">User Experience</div>
+      <h1 class="mt2 mb4">PHP Login Form Challenge</h1>
+
+      <section>
+        <h2>Simple Login Form</h2>
+        Input user :
+        <ul>
+          <li>
+            Username Client Side Validation with JS:
+            <ul>
+              <li>Required</li>
+              <li>Length: 3 - 20 char</li>
+            </ul>
+          </li>
+          <li>
+            Password:
+            <ul>
+              <li>Required</li>
+              <li>Length: 6 - 20 char</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Simple Login Process</h2>
+        <div class="consolas f12 abu">Kondisi Login Benar</div>
+        <div class="alert alert-success">
+          Login success... redirecting to dashboard.
+        </div>
+        <hr />
+        <div class="consolas f12 abu">Kondisi Login Salah</div>
+        <div class="alert alert-danger">
+          Maaf, username atau password tidak tepat.
+        </div>
+      </section>
+
+      <section>
+        <h2>Advanced Login Form</h2>
+        Input user :
+        <ul>
+          <li>
+            Username Client Side Validation with JS:
+            <ul>
+              <li>Lowercase only!</li>
+              <li>Tanpa spasi</li>
+              <li>Tanpa special character</li>
+            </ul>
+          </li>
+          <li>
+            Password:
+            <ul>
+              <li>
+                Simple Password Strength Detector, password harus mengandung
+                huruf dan angka
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Advanced Login Process</h2>
+        <div class="consolas f12 abu">Kondisi Login Benar</div>
+        <div class="alert alert-success">
+          Login success... redirecting to dashboard.
+        </div>
+        <hr />
+        <div class="consolas f12 abu">Kondisi Weak Password</div>
+        <div class="alert alert-danger">
+          Maaf, password Anda terlalu lemah. Silahkan pakai gabungan huruf dan
+          angka!
+        </div>
+      </section>
+
+      <section>
+        <h2>Logout Form</h2>
+        <ul>
+          <li>Tombol logout menyatu dengan dashboard.</li>
+          <li>Wajib ada konfirmasi untuk logout</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Logout Process</h2>
+        Pre-kondisi:
+        <ul>
+          <li>
+            User harus sedang login, jika state sedang tidak login maka tombol
+            logout tersembunyi
+          </li>
+        </ul>
+        After-logout:
+        <ul>
+          <li>Terdapat pesan Anda sudah logout</li>
+          <li>
+            Terdapat timer 2 detik untuk pesan diatas kemudian otomatis
+            redirecting ke Form Login
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Simple Register Form</h2>
+        Input user :
+        <ul>
+          <li>
+            Nama User:
+            <ul>
+              <li>Required</li>
+              <li>Length: 3 - 20 char</li>
+            </ul>
+          </li>
+          <li>
+            Username:
+            <ul>
+              <li>Required</li>
+              <li>Length: 3 - 20 char</li>
+            </ul>
+          </li>
+          <li>
+            Password:
+            <ul>
+              <li>Required</li>
+              <li>Length: 6 - 20 char</li>
+            </ul>
+          </li>
+          <li>
+            Konfirmasi Password:
+            <ul>
+              <li>Required</li>
+              <li>Length: 6 - 20 char</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Simple Register Process</h2>
+
+        Cek Duplikasi Username:
+        <ul>
+          <li>
+            Jika Duplikat tampilkan pesan error: Maaf, username [username] telah
+            diambil oleh orang lain. Silahkan pakai username lainnya!
+          </li>
+          <li>
+            Jika tidak, tampilkan pesan sukses: Creating username accepted.
+          </li>
+        </ul>
+
+        Enkripsi password:
+        <ul>
+          <li>Enkripsi password dengan md5 sebelum INSERT ke tabel user</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Advanced Register Form</h2>
+        Input user :
+        <ul>
+          <li>
+            Nama User, Client Side Validation with JS:
+            <ul>
+              <li>Uppercase only!</li>
+              <li>Tanpa spasi</li>
+              <li>Tanpa special character</li>
+              <li>Tanpa angka [0-9]</li>
+            </ul>
+          </li>
+          <li>
+            Username, Client Side Validation with JS:
+            <ul>
+              <li>Lowercase only!</li>
+              <li>Tanpa spasi</li>
+              <li>Tanpa special character</li>
+            </ul>
+          </li>
+          <li>
+            Password:
+            <ul>
+              <li>
+                Hints for Autofill Strength Random Password (password acak
+                default untuk user)
+              </li>
+              <li>
+                Jika user menghiraukan hints maka Validasi Konfirmasi Password
+                harus ada, jika meng-klik hints maka password dan konfirmasinya
+                otomatis terisi dengan autofill
+              </li>
+            </ul>
+          </li>
+          <li>
+            Konfirmasi Password, Client Side Validation with JS:
+            <ul>
+              <li>Wajib identik dengan Password</li>
+              <li>Matikan tombol submit jika tidak identik</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Advanced Register Process</h2>
+
+        Validasi dilakukan kembali di sisi server by PHP untuk mengecek:
+        <ul>
+          <li>Validitas Nama User</li>
+          <li>Validitas Username</li>
+          <li>Password Strength</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Simple Dashboard</h2>
+        Saat state login:
+        <ul>
+          <li>
+            Munculkan teks: Welcome [nama user] Anda login sebagai
+            [hak-akses-user]
+          </li>
+        </ul>
+        Saat tidak login atau timeout session (30 menit web ditinggalkan user):
+        <ul>
+          <li>Munculkan teks: Session login Anda habis. Silahkan relogin!</li>
+          <li>
+            Terdapat timer 2 detik untuk pesan diatas kemudian otomatis
+            redirecting ke Form Login
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Verifikasi Akun - Level 0</h2>
+        <p>
+          Level 0: <code>skipped</code>, user bisa langsung login setelah
+          register
+        </p>
+      </section>
+
+      <section>
+        <h2>Verifikasi Akun - Level 1</h2>
+        <p>
+          Level 1: <code>Verifikasi by Admin</code>, menunggu Administrator
+          untuk verifikasi tiap user
+        </p>
+      </section>
+
+      <section>
+        <h2>Verifikasi Akun - Level 2</h2>
+        <p>
+          Level 2: <code>Verifikasi via email</code>, kirim link verifikasi ke
+          email dosen <i>isholihin87@gmail.com</i> agar dosen dapat klik link
+          verifikasi tersebut dan user sudah terverifikasi.
+        </p>
+      </section>
+
+      <section>
+        <h2>Verifikasi Akun - Level 3</h2>
+        <p>
+          Level 3: <code>Verifikasi via Whatsapp Gateway</code>, kirim link
+          verifikasi ke whatsapp dosen agar dosen dengan sekali tap dapat
+          melakukan verifikasi terhadap user tsb
+        </p>
+      </section>
+    </div>
+  </body>
+</html>
